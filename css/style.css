@@ -1,0 +1,366 @@
+/* =========================================================
+   KLOKKEBLOMST — design tokens
+   ========================================================= */
+:root {
+  /* Farver */
+  --cream:        #f6ecda;
+  --cream-deep:   #ede0c3;
+  --burgundy:     #7a2a2a;
+  --burgundy-ink: #56201f;
+  --olive:        #a7a473;
+  --dusty-blue:   #a8c3c0;
+  --ink:          #3c2b1f;
+  --ink-soft:     #6b5847;
+  --amber:        #c9793f;
+
+  /* Typografi */
+  --font-display: "Caveat", cursive;
+  --font-body: "Karla", sans-serif;
+
+  /* Layout */
+  --page-max: 68rem;
+  --radius: 6px;
+}
+
+/* =========================================================
+   Grundlag
+   ========================================================= */
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--burgundy-ink);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2.75rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
+h3 { font-size: 1.5rem; }
+
+p  { max-width: 62ch; }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--amber);
+}
+
+/* Hele siden holdes inden for en tegnet ramme, ligesom en skitsebog */
+.page-frame {
+  border: 10px solid var(--burgundy);
+  border-radius: 14px;
+  margin: 0.6rem;
+  min-height: calc(100vh - 1.2rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* =========================================================
+   Header / navigation
+   ========================================================= */
+.site-header {
+  background: var(--cream);
+  border-bottom: 2px solid var(--cream-deep);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--burgundy);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  padding-block: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--burgundy);
+  border-bottom-color: var(--amber);
+}
+
+/* =========================================================
+   Stribet sektion (inspireret af referencebilledet)
+   ========================================================= */
+.stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--dusty-blue) 0px,
+    var(--dusty-blue) 14px,
+    var(--cream-deep) 14px,
+    var(--cream-deep) 40px
+  );
+  padding-block: 3.5rem;
+}
+
+.stripes-olive {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--olive) 0px,
+    var(--olive) 14px,
+    var(--cream-deep) 14px,
+    var(--cream-deep) 40px
+  );
+}
+
+.note-card {
+  background: var(--cream);
+  border: 2px solid var(--burgundy-ink);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+/* =========================================================
+   Hero (forside)
+   ========================================================= */
+.hero {
+  padding-block: 4rem 3rem;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero p {
+  margin-block: 1.25rem 1.75rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+/* Simpelt sting-mønster, brugt som skillelinje i stedet for en almindelig streg */
+.stitch-divider {
+  height: 1.4rem;
+  background-image: radial-gradient(circle, var(--burgundy) 1.6px, transparent 1.7px);
+  background-size: 14px 14px;
+  background-position: center;
+  opacity: 0.55;
+}
+
+/* =========================================================
+   Knapper
+   ========================================================= */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--burgundy);
+}
+
+.btn-primary {
+  background: var(--burgundy);
+  color: var(--cream);
+}
+
+.btn-primary:hover {
+  background: var(--burgundy-ink);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--burgundy);
+}
+
+.btn-ghost:hover {
+  background: var(--cream-deep);
+}
+
+/* =========================================================
+   Tre-spalte introduktion til undersiderne (forsiden)
+   ========================================================= */
+.intro-links {
+  padding-block: 3.5rem;
+}
+
+.intro-links .wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.intro-links a.note-card {
+  transition: transform 0.15s ease;
+}
+
+.intro-links a.note-card:nth-child(2) { transform: rotate(-0.6deg); }
+.intro-links a.note-card:nth-child(3) { transform: rotate(0.5deg); }
+
+.intro-links a.note-card:hover {
+  transform: translateY(-4px);
+}
+
+.intro-links h3 {
+  margin-bottom: 0.5rem;
+}
+
+.intro-links p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+/* =========================================================
+   Sideoverskrift (alle undersider)
+   ========================================================= */
+.page-hero {
+  padding-block: 3.5rem;
+  text-align: center;
+}
+
+.page-hero p {
+  margin-inline: auto;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+}
+
+main {
+  flex: 1;
+}
+
+/* =========================================================
+   Generisk indholds-grid (kreativiteter / til salg)
+   ========================================================= */
+.content-section {
+  padding-block: 3.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.item-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.item-card p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.item-card .price {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--amber);
+}
+
+/* =========================================================
+   Blog
+   ========================================================= */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-block: 2.5rem 4rem;
+}
+
+.post-list .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.post-date {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--burgundy);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer {
+  background: var(--burgundy);
+  color: var(--cream);
+  padding-block: 2.5rem;
+  margin-top: auto;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer .brand {
+  color: var(--cream);
+}
+
+.site-footer a {
+  color: var(--cream-deep);
+}
+
+.site-footer a:hover {
+  color: var(--cream);
+}
+
+/* =========================================================
+   Responsivt
+   ========================================================= */
+@media (max-width: 800px) {
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+  .intro-links .wrap,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .post-card {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
