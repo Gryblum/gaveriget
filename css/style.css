@@ -5,13 +5,13 @@
   /* Farver */
   --cream:        #f6ecda;
   --cream-deep:   #ede0c3;
-  --burgundy:     #7a2a2a;
+  --burgundy:     #8b6d5b;
   --burgundy-ink: #56201f;
   --olive:        #a7a473;
   --dusty-blue:   #a8c3c0;
   --ink:          #3c2b1f;
   --ink-soft:     #6b5847;
-  --amber:        #c9793f;
+  --amber:        #56201f;
 
   /* Typografi */
   --font-display: "Caveat", cursive;
@@ -43,6 +43,17 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.75rem, 6vw, 4.5rem); }
 h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
 h3 { font-size: 1.5rem; }
+
+.hero-logo-wrap {
+  margin: 0;
+  line-height: 1;
+}
+
+.hero-logo {
+  display: block;
+  width: min(100%, 20rem);
+  height: auto;
+}
 
 p  { max-width: 62ch; }
 
@@ -98,7 +109,7 @@ p  { max-width: 62ch; }
 }
 
 .brand-logo {
-  width: 4.6rem;
+  width: 5.5rem;
   height: auto;
   display: block;
 }
@@ -187,8 +198,8 @@ p  { max-width: 62ch; }
   width: min(100%, 28rem);
   height: auto;
   border-radius: 1.1rem;
-  border: 3px solid var(--burgundy);
-  box-shadow: 0 22px 40px rgba(58, 39, 26, 0.14);
+  border: none;
+  box-shadow: none;
   object-fit: cover;
   display: block;
 }
@@ -342,6 +353,89 @@ main {
   color: var(--burgundy);
 }
 
+.booking-section {
+  padding-block: 1rem 4rem;
+}
+
+.booking-card {
+  background: var(--cream);
+  border: 2px solid var(--burgundy-ink);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.booking-card h2 {
+  margin-bottom: 0.75rem;
+}
+
+.booking-card p {
+  color: var(--ink-soft);
+}
+
+.mini-calendar {
+  background: var(--cream-deep);
+  border: 2px solid var(--burgundy-ink);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.calendar-header {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--burgundy-ink);
+  margin-bottom: 0.7rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.day {
+  border: 1px solid var(--burgundy-ink);
+  border-radius: 0.55rem;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.55rem 0.25rem;
+  text-align: center;
+  cursor: default;
+}
+
+.day--muted {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink-soft);
+}
+
+.day--available {
+  background: #e7f2e8;
+}
+
+.day--booked {
+  background: #f0d7d7;
+  color: #7f4d4d;
+}
+
+.day--selected {
+  background: var(--burgundy);
+  color: var(--cream);
+  border-color: var(--burgundy);
+}
+
+.booking-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* =========================================================
    Footer
    ========================================================= */
@@ -362,6 +456,12 @@ main {
 
 .site-footer .brand {
   color: var(--cream);
+}
+
+.site-footer .brand-logo {
+  opacity: 1;
+  filter: invert(1) sepia(1) saturate(0.15) brightness(1.1) hue-rotate(20deg);
+  mix-blend-mode: normal;
 }
 
 .site-footer a {

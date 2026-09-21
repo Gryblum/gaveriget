@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klokkeblomst — historien bag navnet</title>
+  <title>Klokkeblomst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
@@ -15,7 +15,7 @@
     <header class="site-header">
       <div class="wrap">
         <a href="index.html" class="brand" aria-label="Gaveriget">
-          <img src="images/Logo1.png" alt="Gaveriget logo" class="brand-logo">
+          <img src="images/logo-nyt.png" alt="Gaveriget logo" class="brand-logo">
         </a>
         <nav class="nav-links" aria-label="Hovedmenu">
           <a href="index.html">Forside</a>
@@ -31,8 +31,8 @@
     <main>
       <section class="page-hero stripes-olive stripes">
         <div class="wrap">
-          <p class="eyebrow">Historien bag navnet</p>
-          <h1>Hvorfor Klokkeblomst?</h1>
+          <p class="eyebrow">Se sommerhuset</p>
+          <h1>Klokkeblomst</h1>
         </div>
       </section>
 
@@ -40,9 +40,8 @@
         <div class="wrap" style="display:grid; grid-template-columns: 1fr 1fr; gap:3rem; align-items:center;">
           <div>
             <p>
-              [Fortæl her hvorfor navnet Klokkeblomst blev valgt — har det en
-              personlig betydning, kommer det fra en have, en bedstemor,
-              eller bare den blomst du altid har holdt af?]
+              [Fortæl her om sommerhuset Klokkeblomst — hvornår købte i det, hvad betyder navnet, og hvorfor har i valgt det? Har navnet en
+              personlig betydning?]
             </p>
             <p style="margin-top:1.25rem;">
               [Beskriv gerne hvad navnet skal signalere om det du laver — noget
@@ -51,15 +50,65 @@
             </p>
           </div>
 
-          <div aria-hidden="true">
-            <svg viewBox="0 0 300 300">
-              <path d="M150 280 C140 200 120 160 100 100" fill="none" stroke="#a7a473" stroke-width="3"/>
-              <path d="M150 280 C160 210 180 170 200 110" fill="none" stroke="#a7a473" stroke-width="3"/>
-              <g stroke="#7a2a2a" stroke-width="2.5" fill="#a8c3c0">
-                <path d="M100 100 C75 110 70 145 90 160 C110 145 110 112 100 100 Z"/>
-                <path d="M200 110 C175 120 170 152 190 166 C210 152 210 122 200 110 Z"/>
-              </g>
-            </svg>
+          <div class="gallery-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; align-items:start;">
+            <img
+              src="images/sommerhuset.JPEG"
+              alt="Sommerhuset i Klokkeblomst"
+              style="width:100%; height:100%; object-fit:cover; border-radius:1rem; border:3px solid #7a2a2a; box-shadow:0 18px 36px rgba(58,39,26,0.12); min-height:18rem;"
+            >
+            <img
+              src="images/sommerhuset-flag.JPEG"
+              alt="Flag på sommerhuset"
+              style="width:100%; height:100%; object-fit:cover; border-radius:1rem; border:3px solid #7a2a2a; box-shadow:0 18px 36px rgba(58,39,26,0.12); min-height:18rem;"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-section">
+        <div class="wrap">
+          <div class="booking-card">
+            <div>
+              <p class="eyebrow">Booking</p>
+              <h2>Se ledige datoer</h2>
+              <p>
+                Book sommerhuset til en afslappende weekend, en sommerferie eller
+                en lille getaway i naturen.
+              </p>
+            </div>
+
+            <div class="mini-calendar" aria-label="Kalender for booking">
+              <div class="calendar-header">Juli</div>
+              <div class="calendar-grid">
+                <span class="day day--muted">Ma</span>
+                <span class="day day--muted">Ti</span>
+                <span class="day day--muted">On</span>
+                <span class="day day--muted">To</span>
+                <span class="day day--muted">Fr</span>
+                <span class="day day--muted">Lø</span>
+                <span class="day day--muted">Sø</span>
+
+                <button class="day day--booked" type="button" aria-label="Dato 1 er optaget">1</button>
+                <button class="day day--booked" type="button" aria-label="Dato 2 er optaget">2</button>
+                <button class="day day--available" type="button" aria-label="Dato 3 er ledig">3</button>
+                <button class="day day--available" type="button" aria-label="Dato 4 er ledig">4</button>
+                <button class="day day--booked" type="button" aria-label="Dato 5 er optaget">5</button>
+                <button class="day day--available" type="button" aria-label="Dato 6 er ledig">6</button>
+                <button class="day day--selected" type="button" aria-label="Dato 7 er valgt">7</button>
+
+                <button class="day day--available" type="button" aria-label="Dato 8 er ledig">8</button>
+                <button class="day day--available" type="button" aria-label="Dato 9 er ledig">9</button>
+                <button class="day day--booked" type="button" aria-label="Dato 10 er optaget">10</button>
+                <button class="day day--available" type="button" aria-label="Dato 11 er ledig">11</button>
+                <button class="day day--available" type="button" aria-label="Dato 12 er ledig">12</button>
+                <button class="day day--booked" type="button" aria-label="Dato 13 er optaget">13</button>
+                <button class="day day--available" type="button" aria-label="Dato 14 er ledig">14</button>
+              </div>
+            </div>
+
+            <div class="booking-actions">
+              <a href="https://www.airbnb.dk" target="_blank" rel="noreferrer" class="btn btn-primary">Book nu</a>
+            </div>
           </div>
         </div>
       </section>
@@ -68,7 +117,7 @@
     <footer class="site-footer">
       <div class="wrap">
         <span class="brand" aria-label="Gaveriget">
-          <img src="images/Logo1.png" alt="Gaveriget logo" class="brand-logo">
+          <img src="images/logo-nyt.png" alt="Gaveriget logo" class="brand-logo">
         </span>
         <nav class="nav-links" aria-label="Footer-menu">
           <a href="blog.html">Min blog</a>
